@@ -3,9 +3,17 @@ package _03_polymorphs;
 import java.awt.Graphics;
 
 public abstract class Polymorph {
-    int x;
-    int y;
+    protected int x;
+    protected int y;
     
+    public int getTestX() {
+    	return x;
+    }
+     public void setTestX() {
+    	 if() {
+    		 
+    	 }
+     }
     Polymorph(int x, int y){
    	 this.x = x;
    	 this.y = y;
