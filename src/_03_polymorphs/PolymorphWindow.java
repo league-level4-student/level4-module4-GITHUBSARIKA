@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -29,7 +30,10 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    	 window.pack();
    	 window.setVisible(true);
-   	 
+   	 MouseMorph mm = new MouseMorph(250, 250);
+   	 window.addMouseMotionListener(mm);
+   	 ClickMorph cm=new ClickMorph(300, 300);
+   	 window.addMouseListener(cm);
    	
    	 timer = new Timer(1000 / 30, this);
    	 timer.start();
@@ -38,6 +42,9 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 polymorph.add(new BluePolymorph(50, 50));
    	 polymorph.add(new RedMorph(100, 100));
    	 polymorph.add(new MovingMorph(150, 150));
+   	 polymorph.add(new CircleMorph(200, 200));
+   	 polymorph.add(mm);
+   	 polymorph.add(cm);
    	
    	
     }
