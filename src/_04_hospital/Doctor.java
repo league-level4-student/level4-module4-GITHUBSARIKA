@@ -10,7 +10,23 @@ public boolean performsSurgery() {
 public boolean makesHouseCalls() {
 	return false;
 }
-public void assignPatient(Patient pat) {
-	patient.add(pat);
+public void assignPatient(Patient pat) throws DoctorFullException{
+	if(patient.size()>3) {
+		throw  new DoctorFullException();
+	}else {
+		patient.add(pat);
+	}
+	
+	
+}
+public  ArrayList<Patient> getPatients() {
+	
+	return patient;
+	
+}
+public void doMedicine() {
+     for (int i = 0; i < patient.size(); i++) {
+		  patient.get(i).checkPulse();
+	} 
 }
 }
