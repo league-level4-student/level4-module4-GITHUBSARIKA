@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Patient {
 	boolean feelsCaredFor= false;
 	public boolean feelsCaredFor() {
-		return false;
+		return feelsCaredFor;
 	}
 public void checkPulse() {
 	feelsCaredFor=true;

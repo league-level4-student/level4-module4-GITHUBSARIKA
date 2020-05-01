@@ -3,8 +3,8 @@ package _04_hospital;
 import java.util.ArrayList;
 
 public class Hospital {
-ArrayList<Doctor> doctor;
-ArrayList<Patient> patient;
+ArrayList<Doctor> doctor=new ArrayList<Doctor>();
+ArrayList<Patient> patient=new ArrayList<Patient>();
 public void addDoctor(Doctor doc) {
 	doctor.add(doc);
 
@@ -21,6 +21,18 @@ public ArrayList<Patient> getPatients(){
 }
 public void assignPatientsToDoctors() {
 	// TODO Auto-generated method stub
+	int doctorr=0;
 	
+		for (int j = 0; j < patient.size(); j++) {
+		try {
+			doctor.get(doctorr).assignPatient(patient.get(j));
+		} catch (DoctorFullException e) {
+			// TODO Auto-generated catch block
+			j--;
+			doctorr++;
+			
+		}
+		}                                               
+	}
 }
-}
+

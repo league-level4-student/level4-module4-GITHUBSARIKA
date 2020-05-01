@@ -84,10 +84,14 @@ public class HospitalTest extends TestCase {
 	public void testDoctorsCanOnlyHandle3Patients() throws Exception {
 		Doctor testDoctor = new Doctor();
 		testDoctor.assignPatient(new Patient());
+		System.out.println(testDoctor.getPatients().size());
 		testDoctor.assignPatient(new Patient());
+		System.out.println(testDoctor.getPatients().size());
 		testDoctor.assignPatient(new Patient());
+		System.out.println(testDoctor.getPatients().size());
 		try {
 			testDoctor.assignPatient(new Patient());
+			System.out.println(testDoctor.getPatients().size());
 			assertTrue(false);
 		} catch (DoctorFullException dfe) {
 			assertTrue(true);
